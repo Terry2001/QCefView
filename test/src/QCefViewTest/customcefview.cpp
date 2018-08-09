@@ -2,10 +2,21 @@
 #include <QMessageBox>
 #include <QColor>
 #include "customcefview.h"
+#include "QCefDownloadHandler.h"
+#include "QCefDisplayHandler.h"
+
+
 CustomCefView::CustomCefView(const QString& url, QWidget *parent)
 	: QCefView(url, parent)
 {
+	QCefDownloadHandler *downloadHandler = new QCefDownloadHandler(this);
+	setDownloadHandler(downloadHandler);
 
+	QCefDisplayHandler *displayHandler = new QCefDisplayHandler(this);
+	setDisplayHandler(displayHandler);
+
+	connect(displayHandler, &QCefDisplayHandler::urlChanged, this, &CustomCefView::onUrlChanged);
+	connect(downloadHandler, &QCefDownloadHandler::downloadComplete, this, &CustomCefView::onDownloadComplete);
 }
 
 CustomCefView::~CustomCefView()
@@ -76,4 +87,14 @@ void CustomCefView::onInvokeMethodNotify(int browserId,
 		.arg(method);
 
 	QMessageBox::information(this->window(), title, text);
+}
+
+void CustomCefView::onUrlChanged(const QString &url)
+{
+	emit urlChanged(url);
+}
+
+void CustomCefView::onDownloadComplete(const QString &savepath)
+{
+	emit downloadComplete(savepath);
 }

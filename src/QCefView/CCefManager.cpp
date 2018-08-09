@@ -56,7 +56,6 @@ void CCefManager::initializeCef()
 
 #ifndef NDEBUG
 	cef_settings_.log_severity = LOGSEVERITY_DEFAULT;
-	cef_settings_.remote_debugging_port = 7777;
 #else
 	cef_settings_.log_severity = LOGSEVERITY_DISABLE;
 #endif

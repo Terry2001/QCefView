@@ -5,7 +5,7 @@
 #include <QDir>
 #include <QCoreApplication>
 #include <QHBoxLayout>
-
+#include <QMessageBox>
 
 QCefViewTest::QCefViewTest(QWidget *parent)
 	: QMainWindow(parent)
@@ -21,14 +21,20 @@ QCefViewTest::QCefViewTest(QWidget *parent)
 
 	QDir dir = QCoreApplication::applicationDirPath();
 	QString uri = QDir::toNativeSeparators(dir.filePath("web\\QCefViewTestPage.html"));
-	cefview = new CustomCefView(uri/*"http://www.sina.com"*/, this);
+
+	//uri = "http://www.bing.com";
+
+	cefview = new CustomCefView(uri, this);
 	ui.cefContainer->layout()->addWidget(cefview);
 	layout->addWidget(ui.cefContainer);
 
 	centralWidget()->setLayout(layout);
+
+	connect(cefview, &CustomCefView::urlChanged, this, &QCefViewTest::onUrlChanged);
+	connect(cefview, &CustomCefView::downloadComplete, this, &QCefViewTest::onDownloadComplete);
 }
 
-QCefViewTest::~QCefViewTest()
+QCefViewTest::~QCefViewTest() 
 {
 
 }
@@ -36,4 +42,14 @@ QCefViewTest::~QCefViewTest()
 void QCefViewTest::onBtnChangeColorClicked()
 {
 	cefview->changeColor();
+}
+
+void QCefViewTest::onUrlChanged(const QString &url)
+{
+	this->setWindowTitle(url);
+}
+
+void QCefViewTest::onDownloadComplete(const QString &savePath)
+{
+	QMessageBox::information(this, "download complete", "file at:" + savePath);
 }

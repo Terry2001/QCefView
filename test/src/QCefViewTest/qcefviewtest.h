@@ -15,6 +15,11 @@ public:
 
 protected slots:
 	void onBtnChangeColorClicked();
+
+private slots:
+	void onUrlChanged(const QString &url);
+	void onDownloadComplete(const QString &savePath);
+
 private:
 	Ui::QCefViewTestClass ui;
 	CustomCefView* cefview;

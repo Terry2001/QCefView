@@ -59,6 +59,24 @@
     <ClCompile Include="GeneratedFiles\Release\moc_customcefview.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="QCefDisplayHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QCefDownloadHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QCefDisplayHandler.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QCefDisplayHandler.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_QCefDownloadHandler.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_QCefDownloadHandler.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="qcefviewtest.ui">
@@ -67,11 +85,17 @@
     <CustomBuild Include="qcefviewtest.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="QCefDisplayHandler.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QCefDownloadHandler.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
     <CustomBuild Include="customcefview.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="qcefviewtest.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

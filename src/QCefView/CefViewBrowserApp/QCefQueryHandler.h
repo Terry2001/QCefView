@@ -13,7 +13,7 @@
 #include "CCefWindow.h"
 
 class QCefQueryHandler 
-	: public CefBaseRefCounted
+	: public CefBase
 	, public CefMessageRouterBrowserSide::Handler
 {
 public:

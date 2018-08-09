@@ -24,7 +24,7 @@ namespace QCefViewDefaultSchemeHandler
 
 	bool RegisterSchemeHandlerFactory();
 
-	bool RegisterScheme(CefRawPtr<CefSchemeRegistrar> registrar);
+	bool RegisterScheme(CefRefPtr<CefSchemeRegistrar> registrar);
 
 	class SchemeHandler
 		: public CefResourceHandler

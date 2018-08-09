@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QCefView", "src\QCefView\QCefView.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -65,6 +65,7 @@ Global
 		{82F4086D-1013-4012-B55B-19BDC2CAB22F} = {10BD08FC-D6D0-415D-B63D-9EC0D378B0A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		Qt5Version = Qt5.6new
 		SolutionGuid = {B23E622F-E3B7-44D0-87E3-0FD9EADF6B48}
 	EndGlobalSection
 EndGlobal
